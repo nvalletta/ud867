@@ -1,25 +1,25 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.ui;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.jokes.NorasJavaJokes;
+import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.async.GetJokeAsyncTask;
+
+import java.util.concurrent.ExecutionException;
 
 
-public class MainActivity extends ActionBarActivity {
-
-    private NorasJavaJokes norasJavaJokes = new NorasJavaJokes();
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,7 +44,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
-        Toast.makeText(this, norasJavaJokes.getJoke(), Toast.LENGTH_SHORT).show();
+        GetJokeAsyncTask getJokeAsyncTask = new GetJokeAsyncTask(this);
+        getJokeAsyncTask.execute();
     }
 
 
