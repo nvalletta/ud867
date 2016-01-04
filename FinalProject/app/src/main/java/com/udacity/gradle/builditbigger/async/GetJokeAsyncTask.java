@@ -1,14 +1,13 @@
 package com.udacity.gradle.builditbigger.async;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.builditbigger.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.gradle.builditbigger.JokeListener;
 
 import java.io.IOException;
 
@@ -18,10 +17,10 @@ import java.io.IOException;
 public class GetJokeAsyncTask extends AsyncTask<Void, Void, String> {
 
     private static MyApi myApi = null;
-    private Context context;
+    private JokeListener jokeListener;
 
-    public GetJokeAsyncTask(Context context) {
-        this.context = context;
+    public GetJokeAsyncTask(JokeListener jokeListener) {
+        this.jokeListener = jokeListener;
     }
 
     @Override
@@ -36,7 +35,7 @@ public class GetJokeAsyncTask extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String joke) {
         super.onPostExecute(joke);
-        Toast.makeText(context, joke, Toast.LENGTH_SHORT).show();
+        jokeListener.checkOutThisHilariousJoke(joke);
     }
 
     private MyApi getMyApi() {
