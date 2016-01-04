@@ -1,24 +1,22 @@
-package com.udacity.gradle.builditbigger.ui;
+package ui;
 
-import android.content.Context;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.builditbigger.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.gradle.builditbigger.BuildConfig;
 import com.udacity.gradle.builditbigger.JokeListener;
 import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.builditbigger.async.GetJokeAsyncTask;
-
-import java.io.IOException;
+import com.udacity.gradle.builditbigger.ui.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity implements JokeListener {
@@ -58,7 +56,10 @@ public class MainActivity extends AppCompatActivity implements JokeListener {
 
     @Override
     public void checkOutThisHilariousJoke(String joke) {
-        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra(JokeActivity.INTENT_KEY_JOKE, joke);
+
+        startActivity(intent);
     }
 
 }
