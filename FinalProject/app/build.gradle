@@ -36,7 +36,7 @@ dependencies {
     // Added for AdMob
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.0'
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    compile project(':norasandroidlibrary')
     freeCompile 'com.google.android.gms:play-services:8.4.0'
-    paidCompile project(path: ':backend', configuration: 'android-endpoints')
-    paidCompile project(':norasandroidlibrary')
 }

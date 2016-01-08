@@ -7,10 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.udacity.gradle.builditbigger.JokeListener;
 import com.udacity.gradle.builditbigger.R;
-import com.udacity.gradle.builditbigger.async.GetJokeAsyncTask;
 
+import async.GetJokeAsyncTask;
+import listeners.JokeListener;
 import workshop.nora.norasandroidlibrary.JokeActivity;
 
 

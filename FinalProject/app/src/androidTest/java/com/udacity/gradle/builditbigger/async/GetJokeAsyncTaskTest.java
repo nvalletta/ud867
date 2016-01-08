@@ -2,7 +2,7 @@ package com.udacity.gradle.builditbigger.async;
 
 import android.test.AndroidTestCase;
 
-import com.udacity.gradle.builditbigger.JokeListener;
+import listeners.JokeListener;
 
 import java.util.concurrent.CountDownLatch;
 
