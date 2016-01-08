@@ -1,1 +1,1 @@
-include ':app', ':norasjavajokes', ':backend'
+include ':app', ':norasjavajokes', ':backend', ':norasandroidlibrary'

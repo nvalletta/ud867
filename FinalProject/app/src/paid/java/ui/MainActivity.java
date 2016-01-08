@@ -7,16 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.builditbigger.backend.myApi.MyApi;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.udacity.gradle.builditbigger.BuildConfig;
 import com.udacity.gradle.builditbigger.JokeListener;
 import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.builditbigger.async.GetJokeAsyncTask;
-import com.udacity.gradle.builditbigger.ui.JokeActivity;
+
+import workshop.nora.norasandroidlibrary.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity implements JokeListener {

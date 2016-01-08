@@ -22,11 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.JokeActivity"
-            android:label="@string/title_activity_joke" >
-        </activity>
-
     </application>
 
 </manifest>

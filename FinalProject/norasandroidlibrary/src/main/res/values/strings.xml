@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NorasAndroidLibrary</string>
+    <string name="error_message">Uh oh - I was unable to retrieve your joke. Are you sure you\'re connected to the internet?</string>
+</resources>
